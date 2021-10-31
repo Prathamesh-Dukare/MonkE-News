@@ -1,70 +1,155 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Api Key
+### 022611639ad44b908d27115bc632634b
+responcejsonData = {
+        "status": "ok",
+        "totalResults": 38,
+        "articles": [
+            {
+                "source": {
+                    "id": null,
+                    "name": "The Indian Express"
+                },
+                "author": "Sports Desk",
+                "title": "T20 World Cup, West Indies vs Bangladesh Live Score: WI in trouble as Gayle, Lewis depart - The Indian Express",
+                "description": "West Indies vs Bangladesh T20 World Cup Live Score Online, WI vs BAN Live Cricket Score Streaming Online Updates: West Indies and Bangladesh are facing each other today on 29th October.",
+                "url": "https://indianexpress.com/article/sports/cricket/west-indies-vs-bangladesh-live-score-streaming-7596695/",
+                "urlToImage": "https://images.indianexpress.com/2021/10/WhatsApp-Image-2021-10-28-at-9.46.30-AM.jpeg",
+                "publishedAt": "2021-10-29T10:26:47Z",
+                "content": "West Indies vs Bangladesh, T20 World Cup Live Score &amp; Updates: Bangladesh won the toss and elected to bowl against the West Indies in a crucial group 1 Super 12 match of the T20 World Cup. Bangla… [+714 chars]"
+            },
+            {
+                "source": {
+                    "id": null,
+                    "name": "News18"
+                },
+                "author": "Entertainment Bureau",
+                "title": "Puneeth Rajkumar Death LIVE Updates: Kannada Actor Suffered Cardiac Arrest; Fans Can Pay Last Respects at B - News18",
+                "description": "Puneeth Rajkumar Death LIVE Updates: The Kannada superstar passed away due to a cardiac arrest on Friday, October 29.",
+                "url": "https://www.news18.com/news/movies/puneeth-rajkumar-hospitalised-live-updates-actors-condition-serious-says-hospital-worried-fans-pray-for-kannada-star-livenews-4378295.html",
+                "urlToImage": "https://images.news18.com/ibnlive/uploads/2021/10/puneeth-rajkumar-1-1-163549846816x9.jpg",
+                "publishedAt": "2021-10-29T10:17:54Z",
+                "content": "CM Basavaraj S Bommai condoled the death of Karnataka’s “most loved superstar” and announced that State honours would be accorded during the actor’s funeral. Puneeth’s fellow colleagues Darshan, Ravi… [+1707 chars]"
+            },
+            {
+                "source": {
+                    "id": "google-news",
+                    "name": "Google News"
+                },
+                "author": null,
+                "title": "World Psoriasis Day 2021: Is COVID-19 More Dangerous For Psoriasis Patients? - TheHealthSite",
+                "description": null,
+                "url": "https://news.google.com/__i/rss/rd/articles/CBMidWh0dHBzOi8vd3d3LnRoZWhlYWx0aHNpdGUuY29tL25ld3Mvd29ybGQtcHNvcmlhc2lzLWRheS0yMDIxLWlzLWNvdmlkLTE5LW1vcmUtZGFuZ2Vyb3VzLWZvci1wc29yaWFzaXMtcGF0aWVudHMtODQ0OTM5L9IBeWh0dHBzOi8vd3d3LnRoZWhlYWx0aHNpdGUuY29tL25ld3Mvd29ybGQtcHNvcmlhc2lzLWRheS0yMDIxLWlzLWNvdmlkLTE5LW1vcmUtZGFuZ2Vyb3VzLWZvci1wc29yaWFzaXMtcGF0aWVudHMtODQ0OTM5L2FtcC8?oc=5",
+                "urlToImage": null,
+                "publishedAt": "2021-10-29T10:01:00Z",
+                "content": null
+            },
+            {
+                "source": {
+                    "id": null,
+                    "name": "NDTV News"
+                },
+                "author": "Aakash Arya",
+                "title": "Watch: David Warner Recreates Cristiano Ronaldo's Soft Drink Bottle Stunt In Post-Match Press Confer.. - NDTVSports.com",
+                "description": "T20 World Cup 2021: In the post-match press conference, Australia's David Warner recreated the soft drink bottle stunt first done by footballer Cristiano Ronaldo at the Euro 2020 earlier this year.",
+                "url": "https://sports.ndtv.com/icc-t20-world-cup-2021/t20-world-cup-2021-david-warner-recreates-cristiano-ronaldos-soft-drink-bottle-stunt-in-post-match-press-conference-after-win-vs-sri-lanka-watch-2592240",
+                "urlToImage": "https://c.ndtvimg.com/2021-10/nop56qjk_david-warner_625x300_29_October_21.jpg",
+                "publishedAt": "2021-10-29T09:39:00Z",
+                "content": "Australian cricket team opener David Warner turned up in a light mood for the post-match press conference following a crucial win over Sri Lanka in the Super 12 stage of the ongoing T20 World Cup in … [+1485 chars]"
+            },
+            {
+                "source": {
+                    "id": null,
+                    "name": "NDTV News"
+                },
+                "author": "Aakash Arya",
+                "title": "Watch: David Warner Recreates Cristiano Ronaldo's Soft Drink Bottle Stunt In Post-Match Press Confer.. - NDTVSports.com",
+                "description": "T20 World Cup 2021: In the post-match press conference, Australia's David Warner recreated the soft drink bottle stunt first done by footballer Cristiano Ronaldo at the Euro 2020 earlier this year.",
+                "url": "https://sports.ndtv.com/icc-t20-world-cup-2021/t20-world-cup-2021-david-warner-recreates-cristiano-ronaldos-soft-drink-bottle-stunt-in-post-match-press-conference-after-win-vs-sri-lanka-watch-2592240",
+                "urlToImage": "https://c.ndtvimg.com/2021-10/nop56qjk_david-warner_625x300_29_October_21.jpg",
+                "publishedAt": "2021-10-29T09:39:00Z",
+                "content": "Australian cricket team opener David Warner turned up in a light mood for the post-match press conference following a crucial win over Sri Lanka in the Super 12 stage of the ongoing T20 World Cup in … [+1485 chars]"
+            },{
+                "source": {
+                    "id": null,
+                    "name": "NDTV News"
+                },
+                "author": "Aakash Arya",
+                "title": "Watch: David Warner Recreates Cristiano Ronaldo's Soft Drink Bottle Stunt In Post-Match Press Confer.. - NDTVSports.com",
+                "description": "T20 World Cup 2021: In the post-match press conference, Australia's David Warner recreated the soft drink bottle stunt first done by footballer Cristiano Ronaldo at the Euro 2020 earlier this year.",
+                "url": "https://sports.ndtv.com/icc-t20-world-cup-2021/t20-world-cup-2021-david-warner-recreates-cristiano-ronaldos-soft-drink-bottle-stunt-in-post-match-press-conference-after-win-vs-sri-lanka-watch-2592240",
+                "urlToImage": "https://c.ndtvimg.com/2021-10/nop56qjk_david-warner_625x300_29_October_21.jpg",
+                "publishedAt": "2021-10-29T09:39:00Z",
+                "content": "Australian cricket team opener David Warner turned up in a light mood for the post-match press conference following a crucial win over Sri Lanka in the Super 12 stage of the ongoing T20 World Cup in … [+1485 chars]"
+            },{
+                "source": {
+                    "id": null,
+                    "name": "NDTV News"
+                },
+                "author": "Aakash Arya",
+                "title": "Watch: David Warner Recreates Cristiano Ronaldo's Soft Drink Bottle Stunt In Post-Match Press Confer.. - NDTVSports.com",
+                "description": "T20 World Cup 2021: In the post-match press conference, Australia's David Warner recreated the soft drink bottle stunt first done by footballer Cristiano Ronaldo at the Euro 2020 earlier this year.",
+                "url": "https://sports.ndtv.com/icc-t20-world-cup-2021/t20-world-cup-2021-david-warner-recreates-cristiano-ronaldos-soft-drink-bottle-stunt-in-post-match-press-conference-after-win-vs-sri-lanka-watch-2592240",
+                "urlToImage": "https://c.ndtvimg.com/2021-10/nop56qjk_david-warner_625x300_29_October_21.jpg",
+                "publishedAt": "2021-10-29T09:39:00Z",
+                "content": "Australian cricket team opener David Warner turned up in a light mood for the post-match press conference following a crucial win over Sri Lanka in the Super 12 stage of the ongoing T20 World Cup in … [+1485 chars]"
+            },{
+                "source": {
+                    "id": null,
+                    "name": "NDTV News"
+                },
+                "author": "Aakash Arya",
+                "title": "Watch: David Warner Recreates Cristiano Ronaldo's Soft Drink Bottle Stunt In Post-Match Press Confer.. - NDTVSports.com",
+                "description": "T20 World Cup 2021: In the post-match press conference, Australia's David Warner recreated the soft drink bottle stunt first done by footballer Cristiano Ronaldo at the Euro 2020 earlier this year.",
+                "url": "https://sports.ndtv.com/icc-t20-world-cup-2021/t20-world-cup-2021-david-warner-recreates-cristiano-ronaldos-soft-drink-bottle-stunt-in-post-match-press-conference-after-win-vs-sri-lanka-watch-2592240",
+                "urlToImage": "https://c.ndtvimg.com/2021-10/nop56qjk_david-warner_625x300_29_October_21.jpg",
+                "publishedAt": "2021-10-29T09:39:00Z",
+                "content": "Australian cricket team opener David Warner turned up in a light mood for the post-match press conference following a crucial win over Sri Lanka in the Super 12 stage of the ongoing T20 World Cup in … [+1485 chars]"
+            },{
+                "source": {
+                    "id": null,
+                    "name": "NDTV News"
+                },
+                "author": "Aakash Arya",
+                "title": "Watch: David Warner Recreates Cristiano Ronaldo's Soft Drink Bottle Stunt In Post-Match Press Confer.. - NDTVSports.com",
+                "description": "T20 World Cup 2021: In the post-match press conference, Australia's David Warner recreated the soft drink bottle stunt first done by footballer Cristiano Ronaldo at the Euro 2020 earlier this year.",
+                "url": "https://sports.ndtv.com/icc-t20-world-cup-2021/t20-world-cup-2021-david-warner-recreates-cristiano-ronaldos-soft-drink-bottle-stunt-in-post-match-press-conference-after-win-vs-sri-lanka-watch-2592240",
+                "urlToImage": "https://c.ndtvimg.com/2021-10/nop56qjk_david-warner_625x300_29_October_21.jpg",
+                "publishedAt": "2021-10-29T09:39:00Z",
+                "content": "Australian cricket team opener David Warner turned up in a light mood for the post-match press conference following a crucial win over Sri Lanka in the Super 12 stage of the ongoing T20 World Cup in … [+1485 chars]"
+            },{
+                "source": {
+                    "id": null,
+                    "name": "NDTV News"
+                },
+                "author": "Aakash Arya",
+                "title": "Watch: David Warner Recreates Cristiano Ronaldo's Soft Drink Bottle Stunt In Post-Match Press Confer.. - NDTVSports.com",
+                "description": "T20 World Cup 2021: In the post-match press conference, Australia's David Warner recreated the soft drink bottle stunt first done by footballer Cristiano Ronaldo at the Euro 2020 earlier this year.",
+                "url": "https://sports.ndtv.com/icc-t20-world-cup-2021/t20-world-cup-2021-david-warner-recreates-cristiano-ronaldos-soft-drink-bottle-stunt-in-post-match-press-conference-after-win-vs-sri-lanka-watch-2592240",
+                "urlToImage": "https://c.ndtvimg.com/2021-10/nop56qjk_david-warner_625x300_29_October_21.jpg",
+                "publishedAt": "2021-10-29T09:39:00Z",
+                "content": "Australian cricket team opener David Warner turned up in a light mood for the post-match press conference following a crucial win over Sri Lanka in the Super 12 stage of the ongoing T20 World Cup in … [+1485 chars]"
+            },{
+                "source": {
+                    "id": null,
+                    "name": "NDTV News"
+                },
+                "author": "Aakash Arya",
+                "title": "Watch: David Warner Recreates Cristiano Ronaldo's Soft Drink Bottle Stunt In Post-Match Press Confer.. - NDTVSports.com",
+                "description": "T20 World Cup 2021: In the post-match press conference, Australia's David Warner recreated the soft drink bottle stunt first done by footballer Cristiano Ronaldo at the Euro 2020 earlier this year.",
+                "url": "https://sports.ndtv.com/icc-t20-world-cup-2021/t20-world-cup-2021-david-warner-recreates-cristiano-ronaldos-soft-drink-bottle-stunt-in-post-match-press-conference-after-win-vs-sri-lanka-watch-2592240",
+                "urlToImage": "https://c.ndtvimg.com/2021-10/nop56qjk_david-warner_625x300_29_October_21.jpg",
+                "publishedAt": "2021-10-29T09:39:00Z",
+                "content": "Australian cricket team opener David Warner turned up in a light mood for the post-match press conference following a crucial win over Sri Lanka in the Super 12 stage of the ongoing T20 World Cup in … [+1485 chars]"
+            },{
+                "source": {
+                    "id": null,
+                    "name": "NDTV News"
+                },
+                "author": "Aakash Arya",
+                "title": "Watch: David Warner Recreates Cristiano Ronaldo's Soft Drink Bottle Stunt In Post-Match Press Confer.. - NDTVSports.com",
+                "description": "T20 World Cup 2021: In the post-match press conference, Australia's David Warner recreated the soft drink bottle stunt first done by footballer Cristiano Ronaldo at the Euro 2020 earlier this year.",
+                "url": "https://sports.ndtv.com/icc-t20-world-cup-2021/t20-world-cup-2021-david-warner-recreates-cristiano-ronaldos-soft-drink-bottle-stunt-in-post-match-press-conference-after-win-vs-sri-lanka-watch-2592240",
+                "urlToImage": "https://c.ndtvimg.com/2021-10/nop56qjk_david-warner_625x300_29_October_21.jpg",
+                "publishedAt": "2021-10-29T09:39:00Z",
+                "content": "Australian cricket team opener David Warner turned up in a light mood for the post-match press conference following a crucial win over Sri Lanka in the Super 12 stage of the ongoing T20 World Cup in … [+1485 chars]"
+            }]
