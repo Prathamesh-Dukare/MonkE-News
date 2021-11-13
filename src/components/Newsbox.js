@@ -12,11 +12,12 @@ export default class Newsbox extends Component {
             newsCategory: props.newsCategory,
             loadingStatus: false
         }
+        document.title = (this.props.newsCategory!=="General") ? `Monk-eNews - ${this.props.newsCategory}` : "Monk-eNews"
     }
     nextPageHandler = async () => {
         // console.log("next");
         this.setState({ loadingStatus: true })
-        let fetchUrl = `https://newsapi.org/v2/top-headlines?country=in&pageSize=12&apiKey=795a2ee1bb00402a87bad2cba047d329&page=${this.state.page + 1}&category=${this.state.newsCategory}`
+        let fetchUrl = `https://newsapi.org/v2/top-headlines?country=in&pageSize=12&apiKey=178032e6a8aa48078339bdb142478d26&page=${this.state.page + 1}&category=${this.state.newsCategory}`
         let fetchedData = await fetch(fetchUrl)
         let parsedData = await fetchedData.json()
         this.state.cachedData.push(parsedData.articles)
@@ -34,7 +35,7 @@ export default class Newsbox extends Component {
     }
     async componentDidMount() {
         this.setState({ loadingStatus: true })
-        let fetchUrl = `https://newsapi.org/v2/top-headlines?country=in&pageSize=12&apiKey=795a2ee1bb00402a87bad2cba047d329&page=${this.state.page}&category=${this.state.newsCategory}`
+        let fetchUrl = `https://newsapi.org/v2/top-headlines?country=in&pageSize=12&apiKey=178032e6a8aa48078339bdb142478d26&page=${this.state.page}&category=${this.state.newsCategory}`
         let fetchedData = await fetch(fetchUrl)
         let parsedData = await fetchedData.json()
         this.state.cachedData.push(parsedData.articles)
