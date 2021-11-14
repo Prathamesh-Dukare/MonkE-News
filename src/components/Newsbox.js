@@ -15,13 +15,13 @@ export default class Newsbox extends Component {
     }
     async componentDidMount() {
         this.setState({loadingStatus : true})
-        let fetchUrl = `https://newsapi.org/v2/top-headlines?country=in&pageSize=12&apiKey=022611639ad44b908d27115bc632634b&page=${this.state.page}&category=${this.state.newsCategory}`
+        let fetchUrl = `https://newsapi.org/v2/top-headlines?country=in&pageSize=12&apiKey=178032e6a8aa48078339bdb142478d26&page=${this.state.page}&category=${this.state.newsCategory}`
         let fetchedData = await fetch(fetchUrl)
         let parsedData = await fetchedData.json()
         this.setState({ newsArray: parsedData.articles, totalResults: parsedData.totalResults,loadingStatus : false })
     }
     fetchMoreData = async () => {
-        let fetchUrl = `https://newsapi.org/v2/top-headlines?country=in&pageSize=12&apiKey=022611639ad44b908d27115bc632634b&page=${this.state.page + 1}&category=${this.state.newsCategory}`
+        let fetchUrl = `https://newsapi.org/v2/top-headlines?country=in&pageSize=12&apiKey=178032e6a8aa48078339bdb142478d26&page=${this.state.page + 1}&category=${this.state.newsCategory}`
         let fetchedData = await fetch(fetchUrl)
         let parsedData = await fetchedData.json()
         this.setState({ newsArray: this.state.newsArray.concat(parsedData.articles), page: this.state.page + 1 })
@@ -50,7 +50,7 @@ export default class Newsbox extends Component {
                         })}
                     </div>
                 </InfiniteScroll>
-               {this.state.page>1 && <button id="top-scroll-btn" title="go to top" onClick={this.topScroll}>⏏Top</button>}
+               {this.state.page>1 && <button id="top-scroll-btn" className="my-3" title="go to top" onClick={this.topScroll}>⏏Top</button>}
             </div>
         )
     }
