@@ -9,7 +9,6 @@ export default function Newsbox(props) {
     const [loadingStatus, setLoadingStatus] = useState(false)
     const [cachedData, setCachedData] = useState([])
     const [totalResults, setTotalResults] = useState(0)
-    document.title = (props.newsCategory !== "General") ? `Monk-eNews - ${props.newsCategory}` : "Monk-eNews"
 
     const updateNewsArray = async (currentPage) => {
         props.setProgress(15)
@@ -18,11 +17,12 @@ export default function Newsbox(props) {
         props.setProgress(35)
         let fetchedData = await fetch(fetchUrl)
         let parsedData = await fetchedData.json()
+        {
+        let tempCachedData = cachedData
+        tempCachedData.push(parsedData.articles)
+        setCachedData(tempCachedData)
+        }
         props.setProgress(65)
-        // let tempCachedData = cachedData.push(parsedData.articles)
-        // setCachedData(tempCachedData)
-        cachedData.push(parsedData.articles)
-        // console.log(cachedData);
         props.setProgress(75)
         setNewsArray(parsedData.articles)
         setTotalResults(parsedData.totalResults)
@@ -40,11 +40,13 @@ export default function Newsbox(props) {
         setNewsArray(cachedData[cachedData.length - 1])
     }
     useEffect(() => {
+        document.title = (props.newsCategory !== "General") ? `Monk-eNews - ${props.newsCategory}` : "Monk-eNews"
         updateNewsArray(page)
+        //eslint-disable-next-line
     }, [])
     return (
         <div>
-            <h2 className="text-center my-2">{props.boxTitle}</h2>
+            <h1 className="text-center" style={{fontSize:"2rem",marginTop:"4rem",marginBottom:"0.5rem"}}>{props.boxTitle}</h1>
             {loadingStatus && <Spinner />}
             <div className="row mx-5">
                 {(!loadingStatus) && newsArray.map((news) => {
@@ -67,7 +69,6 @@ Newsbox.defaultProps = {
     boxTitle: "Top Headlines"
  };
 Newsbox.propTypes = {
-    name: PropTypes.string,
     newsCategory: PropTypes.string,
     apiKey: PropTypes.string,
     boxTitle: PropTypes.string
