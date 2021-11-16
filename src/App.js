@@ -7,7 +7,7 @@ import { useState } from "react";
 
 function App() {
   const [progress, setProgress] = useState(0)
-  let apiKey = process.env.REACT_APP_NEWS_API_KEY
+  const apiKey = process.env.REACT_APP_NEWS_API_KEY
   return (
     <div className="App">
       <Router>
