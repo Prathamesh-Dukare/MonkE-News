@@ -17,7 +17,7 @@ export default class Newsbox extends Component {
     updateNewsArray = async (currentPage) => {
         this.props.setProgress(15)
         this.setState({ loadingStatus: true })
-        let fetchUrl = `https://newsapi.org/v2/top-headlines?country=in&pageSize=12&apiKey=022611639ad44b908d27115bc632634b&page=${currentPage}&category=${this.state.newsCategory}`
+        let fetchUrl = `https://newsapi.org/v2/top-headlines?country=in&pageSize=12&apiKey=${this.props.apiKey}&page=${currentPage}&category=${this.state.newsCategory}`
         this.props.setProgress(35)
         let fetchedData = await fetch(fetchUrl)
         let parsedData = await fetchedData.json()
