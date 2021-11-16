@@ -14,32 +14,30 @@ export default class Newsbox extends Component {
         }
         document.title = (this.props.newsCategory!=="General") ? `Monk-eNews - ${this.props.newsCategory}` : "Monk-eNews"
     }
-    nextPageHandler = async () => {
-        // console.log("next");
+    updateNewsArray = async (currentPage) => {
+        this.props.setProgress(15)
         this.setState({ loadingStatus: true })
-        let fetchUrl = `https://newsapi.org/v2/top-headlines?country=in&pageSize=12&apiKey=178032e6a8aa48078339bdb142478d26&page=${this.state.page + 1}&category=${this.state.newsCategory}`
+        let fetchUrl = `https://newsapi.org/v2/top-headlines?country=in&pageSize=12&apiKey=022611639ad44b908d27115bc632634b&page=${currentPage}&category=${this.state.newsCategory}`
+        this.props.setProgress(35)
         let fetchedData = await fetch(fetchUrl)
         let parsedData = await fetchedData.json()
+        this.props.setProgress(65)
         this.state.cachedData.push(parsedData.articles)
-        this.setState({ newsArray: parsedData.articles, page: this.state.page + 1, loadingStatus: false })
-        // console.log("page : ", this.state.page);
-        // console.log("cached-data", this.state.cachedData);
+        this.props.setProgress(75)
+        this.setState({ newsArray: parsedData.articles, totalResults: parsedData.totalResults, loadingStatus: false })
+        this.props.setProgress(100)
+    }
+    nextPageHandler = async () => {
+       this.updateNewsArray(this.state.page+1)
+       this.setState({page: this.state.page+1})
     }
     previousPageHandler = async () => {
-        // console.log("previous");
         document.documentElement.scrollTop = 0;
         await this.state.cachedData.pop()
         this.setState({ page: this.state.page - 1, newsArray: this.state.cachedData[this.state.cachedData.length - 1] })
-        // console.log("page : ", this.state.page);
-        // console.log("cached-data", this.state.cachedData);
     }
     async componentDidMount() {
-        this.setState({ loadingStatus: true })
-        let fetchUrl = `https://newsapi.org/v2/top-headlines?country=in&pageSize=12&apiKey=178032e6a8aa48078339bdb142478d26&page=${this.state.page}&category=${this.state.newsCategory}`
-        let fetchedData = await fetch(fetchUrl)
-        let parsedData = await fetchedData.json()
-        this.state.cachedData.push(parsedData.articles)
-        this.setState({ newsArray: parsedData.articles, totalResults: parsedData.totalResults, loadingStatus: false })
+        this.updateNewsArray(this.state.page)
     }
     render() {
         let { boxTitle } = this.props;
