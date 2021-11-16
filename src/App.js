@@ -7,6 +7,7 @@ import { useState } from "react";
 
 function App() {
   const [progress, setProgress] = useState(0)
+  let apiKey = process.env.REACT_APP_NEWS_API_KEY
   return (
     <div className="App">
       <Router>
@@ -19,25 +20,25 @@ function App() {
       />
         <Switch>
           <Route exact path="/">
-            <Newsbox setProgress = {setProgress}  key="general" newsCategory="General" />
+            <Newsbox setProgress = {setProgress} apiKey={apiKey} key="general" newsCategory="General" />
           </Route>
           <Route exact path="/business">
-            <Newsbox setProgress = {setProgress}  key="business" newsCategory="Business" />
+            <Newsbox setProgress = {setProgress} apiKey={apiKey} key="business" newsCategory="Business" />
           </Route>
           <Route exact path="/entertainment">
-            <Newsbox setProgress = {setProgress}  key="entertainment" newsCategory="Entertainment" />
+            <Newsbox setProgress = {setProgress} apiKey={apiKey} key="entertainment" newsCategory="Entertainment" />
           </Route>
           <Route exact path="/health">
-            <Newsbox setProgress = {setProgress}  key="health" newsCategory="Health" />
+            <Newsbox setProgress = {setProgress} apiKey={apiKey} key="health" newsCategory="Health" />
           </Route>
           <Route exact path="/science">
-            <Newsbox setProgress = {setProgress}  key="science" newsCategory="Science" />
+            <Newsbox setProgress = {setProgress} apiKey={apiKey} key="science" newsCategory="Science" />
           </Route>
           <Route exact path="/sports">
-            <Newsbox setProgress = {setProgress}  key="sports" newsCategory="Sports" />
+            <Newsbox setProgress = {setProgress} apiKey={apiKey} key="sports" newsCategory="Sports" />
           </Route>
           <Route exact path="/technology">
-            <Newsbox setProgress = {setProgress}  key="technology" newsCategory="Technology" />
+            <Newsbox setProgress = {setProgress} apiKey={apiKey} key="technology" newsCategory="Technology" />
           </Route>
         </Switch>
       </Router>
