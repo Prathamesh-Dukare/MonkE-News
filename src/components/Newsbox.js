@@ -1,64 +1,74 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types';
 import Newsitem from './Newsitem'
 import Spinner from './Spinner';
-export default class Newsbox extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            newsArray: [],
-            totalResults: 0,
-            page: 1,
-            cachedData: [],
-            newsCategory: props.newsCategory,
-            loadingStatus: false
-        }
-        document.title = (this.props.newsCategory!=="General") ? `Monk-eNews - ${this.props.newsCategory}` : "Monk-eNews"
-    }
-    updateNewsArray = async (currentPage) => {
-        this.props.setProgress(15)
-        this.setState({ loadingStatus: true })
-        let fetchUrl = `https://newsapi.org/v2/top-headlines?country=in&pageSize=12&apiKey=${this.props.apiKey}&page=${currentPage}&category=${this.state.newsCategory}`
-        this.props.setProgress(35)
+
+export default function Newsbox(props) {
+    const [newsArray, setNewsArray] = useState([])
+    const [page, setPage] = useState(1)
+    const [loadingStatus, setLoadingStatus] = useState(false)
+    const [cachedData, setCachedData] = useState([])
+    const [totalResults, setTotalResults] = useState(0)
+    document.title = (props.newsCategory !== "General") ? `Monk-eNews - ${props.newsCategory}` : "Monk-eNews"
+
+    const updateNewsArray = async (currentPage) => {
+        props.setProgress(15)
+        setLoadingStatus(true)
+        let fetchUrl = `https://newsapi.org/v2/top-headlines?country=in&pageSize=12&apiKey=${props.apiKey}&page=${currentPage}&category=${props.newsCategory}`
+        props.setProgress(35)
         let fetchedData = await fetch(fetchUrl)
         let parsedData = await fetchedData.json()
-        this.props.setProgress(65)
-        this.state.cachedData.push(parsedData.articles)
-        this.props.setProgress(75)
-        this.setState({ newsArray: parsedData.articles, totalResults: parsedData.totalResults, loadingStatus: false })
-        this.props.setProgress(100)
+        props.setProgress(65)
+        // let tempCachedData = cachedData.push(parsedData.articles)
+        // setCachedData(tempCachedData)
+        cachedData.push(parsedData.articles)
+        // console.log(cachedData);
+        props.setProgress(75)
+        setNewsArray(parsedData.articles)
+        setTotalResults(parsedData.totalResults)
+        setLoadingStatus(false)
+        props.setProgress(100)
     }
-    nextPageHandler = async () => {
-       this.updateNewsArray(this.state.page+1)
-       this.setState({page: this.state.page+1})
+    const nextPageHandler = async () => {
+        updateNewsArray(page + 1)
+        setPage(page + 1)
     }
-    previousPageHandler = async () => {
+    const previousPageHandler = () => {
         document.documentElement.scrollTop = 0;
-        await this.state.cachedData.pop()
-        this.setState({ page: this.state.page - 1, newsArray: this.state.cachedData[this.state.cachedData.length - 1] })
+        cachedData.pop()
+        setPage(page - 1)
+        setNewsArray(cachedData[cachedData.length - 1])
     }
-    async componentDidMount() {
-        this.updateNewsArray(this.state.page)
-    }
-    render() {
-        let { boxTitle } = this.props;
-        return (
-            <div>
-                <h2 className="text-center my-2">{boxTitle}</h2>
-                {this.state.loadingStatus && <Spinner />}
-                <div className="row mx-5">
-                    {(!this.state.loadingStatus) && this.state.newsArray.map((news) => {
-                        return <div key={news.url} className="col-md-3">
-                            <Newsitem newsTitle={news.title} newsSource={news.source.name} newsUrl={news.url} imageUrl={news.urlToImage !== null ? news.urlToImage : `https://source.unsplash.com/286x158/?${news.title.split(" ")[0]}`} newsDate={news.publishedAt} />
-                        </div>
-                    })}
-                </div>
-
-                {(!this.state.loadingStatus) && <div className="text-center my-5">
-                    <hr />
-                    <button className="btn btn-dark mx-5 my-2" disabled={this.state.page <= 1} onClick={this.previousPageHandler} type="button">&larr;Previous</button>
-                    <button className="btn btn-dark mx-5 my-2" disabled={this.state.page >= Math.ceil(this.state.totalResults / 12) - 1} onClick={this.nextPageHandler} type="button">Next&rarr;</button>
-                </div>}
+    useEffect(() => {
+        updateNewsArray(page)
+    }, [])
+    return (
+        <div>
+            <h2 className="text-center my-2">{props.boxTitle}</h2>
+            {loadingStatus && <Spinner />}
+            <div className="row mx-5">
+                {(!loadingStatus) && newsArray.map((news) => {
+                    return <div key={news.url} className="col-md-3">
+                        <Newsitem newsTitle={news.title} newsSource={news.source.name} newsUrl={news.url} imageUrl={news.urlToImage !== null ? news.urlToImage : `https://source.unsplash.com/286x158/?${news.title.split(" ")[0]}`} newsDate={news.publishedAt} />
+                    </div>
+                })}
             </div>
-        )
-    }
+
+            {(!loadingStatus) && <div className="text-center my-5">
+                <hr />
+                <button className="btn btn-dark mx-5 my-2" disabled={page <= 1} onClick={previousPageHandler} type="button">&larr;Previous</button>
+                <button className="btn btn-dark mx-5 my-2" disabled={page >= Math.ceil(totalResults / 12) - 1} onClick={nextPageHandler} type="button">Next&rarr;</button>
+            </div>}
+        </div>
+    )
 }
+Newsbox.defaultProps = {
+    newsCategory: "General",
+    boxTitle: "Top Headlines"
+ };
+Newsbox.propTypes = {
+    name: PropTypes.string,
+    newsCategory: PropTypes.string,
+    apiKey: PropTypes.string,
+    boxTitle: PropTypes.string
+  };

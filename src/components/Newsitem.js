@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Newsitem extends Component {
-    render() {
-        let { newsTitle, newsSource, newsUrl, imageUrl, newsDate } = this.props;
+export default function Newsitem(props) {
+        let { newsTitle, newsSource, newsUrl, imageUrl, newsDate } = props;
         let newsTitleSorted = newsTitle.split(" - ")[0].slice(0, 90).split(" ")
         newsTitleSorted.pop()
         return (
@@ -16,5 +15,4 @@ export default class Newsitem extends Component {
                 </div>
             </div>
         )
-    }
 }

@@ -6,7 +6,7 @@ import LoadingBar from 'react-top-loading-bar'
 import { useState } from "react";
 
 function App() {
-const [progress, setProgress] = useState(10)
+  const [progress, setProgress] = useState(10)
   let apiKey = process.env.REACT_APP_NEWS_API_KEY;
   return (
     <div className="App">
@@ -37,8 +37,7 @@ const [progress, setProgress] = useState(10)
           </Route>
           <Route exact path="/technology">
             <Newsbox setProgress = {setProgress} apiKey={apiKey}  key="technology" boxTitle="Technology News of the Day" newsCategory="Technology" />
-          </Route>
-          
+          </Route>         
         </Switch>
       </Router>
     </div>
